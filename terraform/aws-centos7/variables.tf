@@ -30,7 +30,7 @@ variable "aws_profile" {
 }
 
 variable "ssh_user" {
-  default     = "ec2-user"
+  default     = "centos"
   description = "The user used for SSH connections and path variables."
 }
 

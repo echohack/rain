@@ -31,7 +31,7 @@ resource "aws_instance" "default" {
   }
 
   tags {
-    Name          = "${format("${var.tag_contact}_${random_id.random.hex}_windows2016", count.index + 1)}"
+    Name          = "${format("${var.aws_key_pair_name}_${random_id.random.hex}_windows2016", count.index + 1)}"
     X-Contact     = "${var.tag_contact}"
     X-TTL         = "${var.tag_ttl}"
   }
