@@ -1,0 +1,17 @@
+terraform.tfvars
+.terraform/
+*.tfstate*
+
+.DS_Store
+!example.tfvars
+*.keys
+*.license
+*.creds
+*.swp
+.idea
+
+tags
+inspec.lock
+
+results/
+user.toml
