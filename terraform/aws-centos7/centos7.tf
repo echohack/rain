@@ -63,6 +63,7 @@ resource "aws_instance" "default" {
       "sudo /tmp/install-hab.sh",
       # https://github.com/habitat-sh/habitat/issues/6260
       "sudo hab pkg install core/jq-static -b >> /tmp/svc-load.log 2>&1",
+      "sudo hab svc load echohack/linux-hardening --strategy at-once >> /tmp/svc-load.log 2>&1",
       ]
   }
 }

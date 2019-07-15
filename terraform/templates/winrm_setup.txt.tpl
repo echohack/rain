@@ -4,8 +4,8 @@ write-output "Running User Data Script"
 write-host "(host) Running User Data Script"
 
 # set administrator password
-cmd.exe /c net user Administrator ${random_string.random.result}
-cmd.exe /c net user chef ${random_string.random.result} /add /LOGONPASSWORDCHG:NO
+cmd.exe /c net user Administrator ${random_string}
+cmd.exe /c net user chef ${random_string} /add /LOGONPASSWORDCHG:NO
 cmd.exe /c net localgroup Administrators /add chef
 
 # RDP

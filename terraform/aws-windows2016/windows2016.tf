@@ -22,7 +22,7 @@ resource "aws_instance" "default" {
   vpc_security_group_ids      = ["${aws_security_group.default.id}"]
   associate_public_ip_address = true
   ebs_optimized               = true
-  user_data                   = "${template_file.winrm_setup.rendered}"
+  user_data                   = "${data.template_file.winrm_setup.rendered}"
 
   root_block_device {
     delete_on_termination = true
