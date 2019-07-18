@@ -95,7 +95,7 @@ set-executionpolicy -executionpolicy unrestricted -force -scope LocalMachine
     }
     inline = [
       "hab pkg install core/windows-service",
-      "hab pkg exec core/window-service install",
+      "hab pkg exec core/windows-service install",
       "hab license accept",
       # "hab svc load echohack/rain --channel unstable --strategy at-once"
     ]
