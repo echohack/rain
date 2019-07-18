@@ -13,7 +13,7 @@ resource "random_id" "random" {
 }
 
 resource "random_string" "random" {
-  length = 16
+  length = 12
   special = false
 }
 
