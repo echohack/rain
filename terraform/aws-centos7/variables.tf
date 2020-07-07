@@ -39,10 +39,7 @@ variable "tag_ttl" {
   description = "The time to live. Used by reaper scripts to determine if instances have lived for too long."
 }
 
-////////////////////////////////
-// Habitat
-variable "channel_list" {
-  description = "Determines the channels to which the software subscribes."
-  type        = "list"
-  default     = ["unstable", "stable"]
+variable "tag_dept" {
+  default     = ""
+  description = "The department that you belong to, for identification purposes."
 }

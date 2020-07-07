@@ -7,6 +7,7 @@ provider "azurerm" {
   features {}
   disable_terraform_partner_id = true
 }
+
 resource "random_id" "random" {
   byte_length = 4
 }
@@ -130,7 +131,7 @@ resource "azurerm_linux_virtual_machine" "default" {
 
   admin_ssh_key {
     username   = "centos"
-    public_key = file("")
+    public_key = file("~/.ssh/automate_echohack.pub")
   }
 
   boot_diagnostics {
@@ -141,26 +142,4 @@ resource "azurerm_linux_virtual_machine" "default" {
     environment = "${var.tag_contact_name}_${random_id.random.hex}"
     X-Contact   = var.tag_contact_email
   }
-
-  # provisioner "remote-exec" {
-  #   inline = [
-  #     "sudo hostnamectl set-hostname ${format("${var.aws_key_pair_name}_${random_id.random.hex}_%02d", count.index + 1)}",
-  #   ]
-  # }
 }
-
-# data "aws_ami" "centos" {
-#   most_recent = true
-
-#   filter {
-#     name   = "name"
-#     values = ["chef-highperf-centos7-*"]
-#   }
-
-#   filter {
-#     name   = "virtualization-type"
-#     values = ["hvm"]
-#   }
-
-#   owners = ["446539779517"]
-# }
